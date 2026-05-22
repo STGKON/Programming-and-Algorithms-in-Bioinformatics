@@ -1,5 +1,5 @@
 # Programming-and-Algorithms-in-Bioinformatics
-Postgraduate Assignment Report — Advanced Algorithmic & Privacy Pipeline
+Postgraduate Assignment  — Advanced Algorithmic & Privacy Pipeline
 ## Part 1: Algorithmic Efficiency & Complexity
 
 ## 📈  Section 1: Asymptotic Complexity
