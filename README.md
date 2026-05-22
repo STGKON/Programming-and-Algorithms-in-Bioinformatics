@@ -38,7 +38,11 @@ plt.plot(x, x**5, label='$x^5$')
 plt.plot(x, 2**x, label='$2^x$')
 plt.plot(x, gamma(x), label='Factorial x!')
 
-
+# Focus on the vertical growth of this specific interval
+plt.ylim(0, 80000)
+plt.legend()
+plt.savefig('λήψη.png')
+plt.show()
 
 
 
