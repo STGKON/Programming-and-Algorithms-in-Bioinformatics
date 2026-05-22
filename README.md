@@ -1,6 +1,6 @@
 # Programming-and-Algorithms-in-Bioinformatics
 Postgraduate Assignment Report — Advanced Algorithmic & Privacy Pipeline
-Part 1: Algorithmic Efficiency & Complexity
+## Part 1: Algorithmic Efficiency & Complexity
 
 ## 📈  Section 1: Asymptotic Complexity
 
@@ -15,21 +15,33 @@ Interval (1.18 - 9.24] → Dominant Function: x5 (Polynomial)
 Interval (9.24 - ) → Dominant Function: x! (Factorial)
 This analysis also confirms the theoretical hierarchy of algorithmic complexity:  
 x< xlogx < x5 < 2x < x!  
+### 💻 Python Implementation
+
+The following code was used to analyze the functions and generate the visualization for the mid-range interval:
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.special import gamma
+
+# Define the logarithmic-linear function
+def nlogn(n):
+    return n * np.log2(n)
+
+# Create 1000 evenly spaced numbers in the mid-range interval
+x = np.linspace(1.18, 9.24, 1000)
+
+# Plotting the 5 complexity functions
+plt.plot(x, x, label='x')
+plt.plot(x, nlogn(x), label='x log(x)')
+plt.plot(x, x**5, label='$x^5$')
+plt.plot(x, 2**x, label='$2^x$')
+plt.plot(x, gamma(x), label='Factorial x!')
+
+# Focus on the vertical growth of this specific interval
+plt.ylim(0, 80000)
+plt.legend()
+plt.savefig('λήψη.png')
+plt.show()
 
 
-## Section 2: Sorting Benchmarks (5-Second Timeout)
-In this part, three sorting algorithms were evaluated under a 5-second execution constraint:
-Brute Force Sort  
-▪ Maximum input within 5 seconds: 10 elements (factorial growth: O(n!)). 
-
-Bubble Sort 
-▪ Maximum input within 5 seconds: ~ 7500 elements (quadratic growth: O(n2)). 
-
- QuickSort 
- ▪ Maximum input within 5 seconds:  ~ 1.200.000 elements (divide-and-conquer: O(nlogn)).
- These results clearly demonstrate that the growth rate of an algorithm is the dominant factor in 
-performance, rather than raw hardware speed. 
-This analysis highlights the importance of selecting algorithms with suitable asymptotic growth for 
-large inputs. While simple algorithms may suffice small arrays, more efficient algorithms like 
-QuickSort are essential for scaling to larger datasets.  
- 
